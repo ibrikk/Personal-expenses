@@ -13,6 +13,13 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.purple,
         secondaryHeaderColor: Colors.amber,
+        fontFamily: 'Quicksand',
+        appBarTheme: const AppBarTheme(
+          titleTextStyle: TextStyle(
+              fontFamily: 'OpenSans',
+              fontSize: 20,
+              fontWeight: FontWeight.bold),
+        ),
       ),
       home: MyHomePage(),
     );
@@ -69,7 +76,10 @@ class _MyHomePageState extends State<MyHomePage> {
         actions: <Widget>[
           IconButton(onPressed: () => {}, icon: Icon(Icons.add)),
         ],
-        title: Text('Personal Expenses'),
+        title: const Text(
+          'Personal Expenses',
+          style: TextStyle(fontFamily: 'Open Sans'),
+        ),
       ),
       body: SingleChildScrollView(
         child: Column(
