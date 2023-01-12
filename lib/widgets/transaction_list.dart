@@ -18,11 +18,12 @@ class TransactionList extends StatelessWidget {
               child: Row(
             children: <Widget>[
               Container(
-                margin: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+                margin:
+                    const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
                 decoration: BoxDecoration(
                     border: Border.all(
                         color: Theme.of(context).primaryColor, width: 2)),
-                padding: EdgeInsets.all(10),
+                padding: const EdgeInsets.all(10),
                 child: Text(
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
@@ -36,12 +37,12 @@ class TransactionList extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Text(
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontWeight: FontWeight.bold,
                       ),
                       transactions[index].title),
                   Text(
-                    style: TextStyle(
+                    style: const TextStyle(
                         color: Colors.grey,
                         fontSize: 10,
                         fontStyle: FontStyle.italic),

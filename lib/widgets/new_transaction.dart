@@ -31,20 +31,20 @@ class _NewTransactionState extends State<NewTransaction> {
     return Card(
       elevation: 5,
       child: Container(
-        padding: EdgeInsets.all(10),
+        padding: const EdgeInsets.all(10),
         child: Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: <Widget>[
               TextField(
                 // onChanged: (val) => titleInput = val,
                 controller: titleController,
-                decoration: InputDecoration(labelText: 'Title'),
+                decoration: const InputDecoration(labelText: 'Title'),
                 onSubmitted: (_) => submitData(),
               ),
               TextField(
                 //  onChanged: (val) => amountInput = val,
                 controller: amountController,
-                decoration: InputDecoration(labelText: 'Amount'),
+                decoration: const InputDecoration(labelText: 'Amount'),
                 keyboardType: TextInputType.number,
                 onSubmitted: (_) => submitData(),
               ),
@@ -55,7 +55,7 @@ class _NewTransactionState extends State<NewTransaction> {
                   backgroundColor: Colors.transparent,
                   elevation: 15.0,
                 ),
-                child: Text('Add Transaction'),
+                child: const Text('Add Transaction'),
               )
             ]),
       ),

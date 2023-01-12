@@ -56,8 +56,8 @@ class _MyHomePageState extends State<MyHomePage> {
         builder: (_) {
           return GestureDetector(
             onTap: () {},
-            child: NewTransaction(_addNewTransaction),
             behavior: HitTestBehavior.opaque,
+            child: NewTransaction(_addNewTransaction),
           );
         });
   }
@@ -81,7 +81,7 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Card(
                 color: Theme.of(context).secondaryHeaderColor,
                 elevation: 5,
-                child: Text("CHART!"),
+                child: const Text("CHART!"),
               ),
             ),
             TransactionList(_userTransactions),
@@ -91,7 +91,7 @@ class _MyHomePageState extends State<MyHomePage> {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: FloatingActionButton(
           onPressed: () => {_startAddNewTransaction(context)},
-          child: Icon(Icons.add)),
+          child: const Icon(Icons.add)),
     );
   }
 }
