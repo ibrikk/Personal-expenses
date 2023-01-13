@@ -33,31 +33,32 @@ class _NewTransactionState extends State<NewTransaction> {
       child: Container(
         padding: const EdgeInsets.all(10),
         child: Column(
-            crossAxisAlignment: CrossAxisAlignment.end,
-            children: <Widget>[
-              TextField(
-                // onChanged: (val) => titleInput = val,
-                controller: titleController,
-                decoration: const InputDecoration(labelText: 'Title'),
-                onSubmitted: (_) => submitData(),
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: <Widget>[
+            TextField(
+              // onChanged: (val) => titleInput = val,
+              controller: titleController,
+              decoration: const InputDecoration(labelText: 'Title'),
+              onSubmitted: (_) => submitData(),
+            ),
+            TextField(
+              //  onChanged: (val) => amountInput = val,
+              controller: amountController,
+              decoration: const InputDecoration(labelText: 'Amount'),
+              keyboardType: TextInputType.number,
+              onSubmitted: (_) => submitData(),
+            ),
+            ElevatedButton(
+              onPressed: submitData,
+              style: ElevatedButton.styleFrom(
+                foregroundColor: Colors.purple,
+                backgroundColor: Colors.transparent,
+                elevation: 15.0,
               ),
-              TextField(
-                //  onChanged: (val) => amountInput = val,
-                controller: amountController,
-                decoration: const InputDecoration(labelText: 'Amount'),
-                keyboardType: TextInputType.number,
-                onSubmitted: (_) => submitData(),
-              ),
-              ElevatedButton(
-                onPressed: submitData,
-                style: ElevatedButton.styleFrom(
-                  foregroundColor: Colors.purple,
-                  backgroundColor: Colors.transparent,
-                  elevation: 15.0,
-                ),
-                child: const Text('Add Transaction'),
-              )
-            ]),
+              child: const Text('Add Transaction'),
+            )
+          ],
+        ),
       ),
     );
   }
