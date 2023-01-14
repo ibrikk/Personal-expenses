@@ -28,36 +28,43 @@ class _NewTransactionState extends State<NewTransaction> {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      elevation: 5,
-      child: Container(
-        padding: const EdgeInsets.all(10),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: <Widget>[
-            TextField(
-              // onChanged: (val) => titleInput = val,
-              controller: titleController,
-              decoration: const InputDecoration(labelText: 'Title'),
-              onSubmitted: (_) => submitData(),
-            ),
-            TextField(
-              //  onChanged: (val) => amountInput = val,
-              controller: amountController,
-              decoration: const InputDecoration(labelText: 'Amount'),
-              keyboardType: TextInputType.number,
-              onSubmitted: (_) => submitData(),
-            ),
-            ElevatedButton(
-              onPressed: submitData,
-              style: ElevatedButton.styleFrom(
-                foregroundColor: Colors.purple,
-                backgroundColor: Colors.transparent,
-                elevation: 15.0,
+    return SingleChildScrollView(
+      child: Card(
+        elevation: 5,
+        child: Container(
+          padding: EdgeInsets.only(
+            top: 10,
+            left: 10,
+            right: 10,
+            bottom: MediaQuery.of(context).viewInsets.bottom + 10,
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: <Widget>[
+              TextField(
+                // onChanged: (val) => titleInput = val,
+                controller: titleController,
+                decoration: const InputDecoration(labelText: 'Title'),
+                onSubmitted: (_) => submitData(),
               ),
-              child: const Text('Add Transaction'),
-            )
-          ],
+              TextField(
+                //  onChanged: (val) => amountInput = val,
+                controller: amountController,
+                decoration: const InputDecoration(labelText: 'Amount'),
+                keyboardType: TextInputType.number,
+                onSubmitted: (_) => submitData(),
+              ),
+              ElevatedButton(
+                onPressed: submitData,
+                style: ElevatedButton.styleFrom(
+                  foregroundColor: Colors.purple,
+                  backgroundColor: Colors.transparent,
+                  elevation: 15.0,
+                ),
+                child: const Text('Add Transaction'),
+              )
+            ],
+          ),
         ),
       ),
     );
